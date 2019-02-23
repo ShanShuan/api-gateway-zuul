@@ -1,0 +1,18 @@
+
+spring:
+  application:
+    name: api-gateway
+server:
+  port: 5555
+zuul:
+  routes:
+    api-a-url:
+      path: /api-a-url/**
+      url: hello-service
+    api-b-url:
+          path: /api-b-url/**
+          url: feign-consumer
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:29381/eureka/
